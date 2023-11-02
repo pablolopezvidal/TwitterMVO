@@ -1,3 +1,3 @@
 <?php 
-    require_once("controller/userController.php");
+    require_once("controller/loginController.php");
 ?>

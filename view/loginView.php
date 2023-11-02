@@ -15,6 +15,6 @@
       <input type="password" id="password" name="password" required />
       <input type="submit" value="Send" name="submit"/>
     </form>
-    <a href="paginaRegistro.php">¿No estas registrado?, iniar registro</a>
+    <a href="">¿No estas registrado?, iniar registro</a><!-- preguntar si en MVO estaria bien enlazando tal cual como lo hice en el normal-->
 </body>
 </html>
