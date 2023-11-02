@@ -1,12 +1,9 @@
 <?php
 
-require("./model/loginDAO.php");
 
-$results = loginUser($pdo);
+require("../model/loginDAO.php");
 
-// Cerrar la conexion
-$pdo = null;
+loginUser($pdo);
 
-require("./view/loginView.php");
 ?>
 

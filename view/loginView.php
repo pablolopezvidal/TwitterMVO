@@ -8,7 +8,14 @@
 </head>
 <body>
     <h1>INICIO SESION</h1>
-    <form action="../model/loginDAO.php" method="POST">
+    <?php
+    require("../model/loginDAO.php");
+    if (isset($_SESSION["error_login"])){
+      echo $_SESSION["error_login"];
+      $_SESSION['error_login'] = null; #meter en la vista un cacho de php esta bien??????????
+    }
+    ?>
+    <form action="../controller/loginController.php" method="POST">
       <label for="username">Username:</label>
       <input type="text" id="username" name="username" required />
       <label for="password">password:</label>

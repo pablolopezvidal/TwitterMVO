@@ -20,6 +20,8 @@ class User {
     public function __get($atributo) {
         return $this->$atributo;
     }
+
+    /*yo aqui tebngo que hacer algo de lo de ibernete ????????????*/
 }
 
 ?>
