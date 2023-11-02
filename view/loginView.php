@@ -9,7 +9,8 @@
 <body>
     <h1>INICIO SESION</h1>
     <?php
-    require("../model/loginDAO.php");
+    session_start();
+    #require("../model/loginDAO.php");
     if (isset($_SESSION["error_login"])){
       echo $_SESSION["error_login"];
       $_SESSION['error_login'] = null; #meter en la vista un cacho de php esta bien??????????
