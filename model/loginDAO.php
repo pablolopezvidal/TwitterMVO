@@ -29,7 +29,7 @@ function loginUser($pdo) {
     
             if ($password == $usuario["password"]) { #aqui se pone el nombre que tiene la columna en la tablade de mysql para comparar la encriptada con al que se le ha dado el el formulario
                 $_SESSION["usuario"] = $usuario;
-                header("Location: ../view/twitterView.php");
+                header("Location: ../controller/twitterController.php");
             } else {
                 $_SESSION["error_login"] = "Login incorrecto wachoo";
                 header("Location: ../view/loginView.php");

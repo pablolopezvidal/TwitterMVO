@@ -24,12 +24,14 @@
   </div>
   <h1>Tweets</h1>
   <div id="contenido">
-      <?php foreach ($results as $i):?>
+    <?php foreach ($results as $i):?>
         <div class="caja">
-              <h3><?= $i->text;?></h3>
-              <h3><?= $i->createDate;?></h3>
+            <!--COMO HAGO PARA IMPRIMIR EL NOMBRE DE CADA TWEET? PORQUE AQUI LO QUE SE ESTA IMPRMIENDP SON LOS ATRIBUTOS DEL OBGETO, QUE PASA QUE EL OBGETO NO TIENE COMO TAL EL NOMBRE DEL QEU PUBLICO EL TWEET ENTONCES  ENTONCES COMO ACCEDO AL ESE DATO, HAGO UNA QUERY EN LA VISTA LA HAGO EN EL CONTROLADOR O QUE  -->
+            <h3><?= $i[4];?></h3>
+            <h3><?= $i[2];?></h3>
+            <h3><?= $i[3];?></h3>
         </div>  
-      <?php endforeach;?>
+    <?php endforeach;?>
   </div>
   <div id="barra_inferior">
     <div class="botones"><a href="../twitear/twitear.php">PUBLICAR</a></div>
@@ -39,4 +41,3 @@
   </div>
 </body>
 </html>
-
