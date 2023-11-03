@@ -5,6 +5,7 @@ class Publications {
     protected $userId;
     protected $text;
     protected $createDate;
+    
 
     public function __construct($id, $userId, $text, $createDate ) {
         $this->id = $id;

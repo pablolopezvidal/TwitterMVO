@@ -6,6 +6,7 @@ class User {
     protected $email;
     protected $password;
     protected $description;
+    protected $listaTweets;
 
 
     public function __construct($id, $username, $email, $password, $description ) {
@@ -14,7 +15,7 @@ class User {
         $this->email = $email;
         $this->password = $password;
         $this->description = $description;
-
+        $this->listaTweets = [];
     }
 
     public function __get($atributo) {
