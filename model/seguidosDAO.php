@@ -5,7 +5,8 @@ session_start();
 
 function selectPublications($pdo) {
     try {
-        $statement = $pdo->prepare("SELECT * FROM publications join users on publications.userId = users.id order by publications.id DESC");
+        $statement = $pdo->prepare("SELECT * FROM social_network.publications join users on publications.userId = users.id where userId in(SELECT userToFollowId FROM social_network.follows where users_id=:userId)");
+        $statement->bindParam(':userId', $_SESSION['usuario']['id']);
         $statement->execute(); 
         $results = [];
         foreach ($statement->fetchAll() as $p) {
@@ -17,3 +18,4 @@ function selectPublications($pdo) {
         echo "No se ha podido completar la transaccion";
     }
 }
+

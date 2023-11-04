@@ -26,6 +26,7 @@
   <div id="contenido">
       <?php foreach ($results as $i):?>
         <div class="caja">
+              <h3><?= $i->nombreUsuario;?></h3>
               <h3><?= $i->text;?></h3>
               <h3><?= $i->createDate;?></h3>
         </div>  
@@ -35,7 +36,7 @@
     <div class="botones"><a href="../twitear/twitear.php">PUBLICAR</a></div>
     <div class="botones"><a href="../descripcion/cambiardesc.php">DESCRIPCION</a></div>
     <div class="botones"><a href="../controller/publicacionesController.php">MUNDO</a></div>
-    <div class="botones"><a href="../seguidos/seguidos.php">SEGUIDOS</a></div>
+    <div class="botones"><a href="../controller/seguidosController.php">SEGUIDOS</a></div>
   </div>
 </body>
 </html>

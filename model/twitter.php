@@ -5,8 +5,6 @@ class twitter {
     protected $usuarios;
     protected $publicaciones;
    
-
-
     public function __construct() {
         $this->usuarios = [];
         $this->publicaciones = [];
@@ -17,5 +15,4 @@ class twitter {
         return $this->$atributo;
     }
 }
-
 ?>
