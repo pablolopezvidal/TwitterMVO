@@ -5,16 +5,14 @@ class Publications {
     protected $userId;
     protected $text;
     protected $createDate;
-    protected $nombreUsuario;
+    protected $nombreUsuario; 
 
-    public function __construct($id, $userId, $text, $createDate, $nombreUsuario ) {
+    public function __construct($id, $userId, $text, $createDate, $nombreUsuario) {
         $this->id = $id;
         $this->userId = $userId;
         $this->text = $text;
         $this->createDate = $createDate;
         $this->nombreUsuario = $nombreUsuario;
-
-
     }
 
     public function __get($atributo) {

@@ -10,8 +10,7 @@ function selectPublications($pdo) {
         $statement->execute(); 
         $results = [];
         foreach ($statement->fetchAll() as $p) {
-            $objectP = new Publications($p["id"], $p["userId"], $p["text"],$p["createDate"], $p["username"]);
-            array_push($results, $objectP);
+            #si yo creo aqui todos los usuarios que sigo y los meto en mi array de gente que sifgo por mucho que yo tengra dentro de la lista la gente que sigo sus lista de twiits estaran vacias 
         }
         return $results;
     }catch (PDOException $e) {
