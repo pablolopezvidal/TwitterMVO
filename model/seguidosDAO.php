@@ -2,10 +2,10 @@
 <?php
 
 require_once("C:\Users\pc\desktop\git\TwitterMVO\connection\conecction.php");
-require("C:\Users\pc\desktop\git\TwitterMVO\model/tweets.php");
-require("C:\Users\pc\desktop\git\TwitterMVO\model\users.php");
+#require("C:\Users\pc\desktop\git\TwitterMVO\model/tweets.php");
+#require("C:\Users\pc\desktop\git\TwitterMVO\model\users.php");
 include("C:\Users\pc\desktop\git\TwitterMVO\model/twitterDAO.php");
-session_start();
+#session_start(); comento estas tres lineas porque no hacen falta porque si las descomento no funciona nadda
 
 function selectPublications2($pdo) {
     try {

@@ -15,9 +15,9 @@ function selectPublications($pdo, User $usuario) {
 
         foreach ($statement->fetchAll() as $p) {
             $objectP = new tweet($p["id"], $p["userId"], $p["text"],$p["createDate"],$p["username"]); 
+            array_push($results, $objectP);
             if (!in_array($objectP, $usuario->listaTweets)) {
                 array_push($usuario->listaTweets, $objectP);
-                array_push($results, $objectP);
             }
         }
         return $results;

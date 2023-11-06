@@ -2,7 +2,7 @@
 
 require("../model/seguidosDAO.php");
 
-$results = selectPublications($pdo);
+$results = selectPublications2($pdo);
 
 // Cerrar la conexion
 $pdo = null;
