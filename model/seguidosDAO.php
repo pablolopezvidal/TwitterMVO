@@ -9,11 +9,11 @@ include("C:\Users\pc\desktop\git\TwitterMVO\model/twitterDAO.php");
 
 function selectPublications2($pdo) {
     try {
-        $statement = $pdo->prepare("SELECT * FROM social_network.publications join users on publications.userId = users.id where userId in(SELECT userToFollowId FROM social_network.follows where users_id=:userId)");
-        $statement->bindParam(':userId', $_SESSION['usuario']['id']);
-        $statement->execute();
+        #$statement = $pdo->prepare("SELECT * FROM social_network.publications join users on publications.userId = users.id where userId in(SELECT userToFollowId FROM social_network.follows where users_id=:userId)");
+        #$statement->bindParam(':userId', $_SESSION['usuario']['id']);
+        #$statement->execute();
 
-        $statement2 = $pdo->prepare("SELECT * from users where users.id in (select userToFollowId from follows where users_id=:userId");
+        $statement2 = $pdo->prepare("SELECT * from users where users.id in (select userToFollowId from follows where users_id=:userId)");
         $statement2->bindParam(':userId', $_SESSION['usuario']['id']);
         $statement2->execute();
         
@@ -27,12 +27,30 @@ function selectPublications2($pdo) {
 
         $results = [];
 
+        if (isset($_SESSION["ObjetoUsuario"]) && is_object($_SESSION["ObjetoUsuario"])) {
+                foreach ($_SESSION["ObjetoUsuario"]->listaFollows as $p) {
+                    if (is_object($p) && isset($p->listaTweets) && is_array($p->listaTweets)) {
+                        foreach ($p->listaTweets as $q) {
+                            if (is_object($q) && !in_array($q, $results)) {
+                                array_push($results, $q);
+                            }
+                        }
+                    }
+                }
+            }
+
+        return $results;
+/*
         foreach ($statement->fetchAll() as $p) {
             $objectP = new tweet($p["id"], $p["userId"], $p["text"],$p["createDate"],$p["username"]); 
             array_push($results, $objectP);
+            if (!in_array($objectP, $usuario->listaTweets)) {
+                array_push($usuario->listaTweets, $objectP);
+            }
         }
-        return $results;
+*/
     }catch (PDOException $e) {
+        #var_dump($e);
         echo "No se ha podido completar la transaccion";
     }
 }

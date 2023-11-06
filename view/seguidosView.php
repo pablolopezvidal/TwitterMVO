@@ -118,7 +118,7 @@ a{
     <?php foreach ($results as $i):?>
         <div class="caja">
             <!--COMO HAGO PARA IMPRIMIR EL NOMBRE DE CADA TWEET? PORQUE AQUI LO QUE SE ESTA IMPRMIENDP SON LOS ATRIBUTOS DEL OBGETO, QUE PASA QUE EL OBGETO NO TIENE COMO TAL EL NOMBRE DEL QEU PUBLICO EL TWEET ENTONCES  ENTONCES COMO ACCEDO AL ESE DATO, HAGO UNA QUERY EN LA VISTA LA HAGO EN EL CONTROLADOR O QUE  -->
-            <h3><?= $i->nombreUsuario;?></h3>
+            <h3><?= $i->nombreUsuario;?></h3><!-- aqui tengo que enviar con metofo get el nombre y de mi lista de usuarios imprimo los datos cuyo username sea ese nombre-->
             <h3><?= $i->text;?></h3>
             <h3><?= $i->createDate;?></h3>
         </div>  
@@ -130,5 +130,10 @@ a{
     <div class="botones"><a href="../controller/publicacionesController.php">MUNDO</a></div>
     <div class="botones"><a href="../controller/seguidosController.php">SEGUIDOS</a></div>
   </div>
+  <h1>lista de gente a la que sigo</h1>
 </body>
 </html>
+  <?php 
+    var_dump($_SESSION['ObjetoUsuario']->listaFollows[1]);
+    #$usuario.get
+  ?>
