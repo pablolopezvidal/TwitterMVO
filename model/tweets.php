@@ -1,6 +1,6 @@
 <?php 
 
-class Publications {
+class tweet {
     protected $id;
     protected $userId;
     protected $text;

@@ -1,6 +1,6 @@
 <?php
 require_once("C:\Users\pc\desktop\git\TwitterMVO\connection\conecction.php");
-require("C:\Users\pc\desktop\git\TwitterMVO\model\publications.php");
+require("C:\Users\pc\desktop\git\TwitterMVO\model/tweets.php");
 session_start();
 
 function selectPublications($pdo) {
@@ -9,7 +9,7 @@ function selectPublications($pdo) {
         $statement->execute(); 
         $results = [];
         foreach ($statement->fetchAll() as $p) {
-            $objectP = new Publications($p["id"], $p["userId"], $p["text"],$p["createDate"], $p["username"]);
+            $objectP = new tweet($p["id"], $p["userId"], $p["text"],$p["createDate"], $p["username"]);
             array_push($results, $objectP);
         }
         return $results;
