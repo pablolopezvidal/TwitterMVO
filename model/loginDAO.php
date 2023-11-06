@@ -20,15 +20,17 @@ function loginUser($pdo) {
 
         if ($statement && $numFilas == 1) {
             $usuario = $statement->fetchAll()[0];
+
             /*
             echo $usuario;
             var_dump($usuario);
             echo $usuario["password"];
-            */
             $_SESSION["usuario"] = $usuario;
-    
+            */
+
             if ($password == $usuario["password"]) { #aqui se pone el nombre que tiene la columna en la tablade de mysql para comparar la encriptada con al que se le ha dado el el formulario
                 $_SESSION["usuario"] = $usuario;
+                $_SESSION["ObjetoUsuario"] = new User($_SESSION['usuario']['id'],$_SESSION['usuario']['username'],$_SESSION['usuario']['email'],$_SESSION['usuario']['password'],$_SESSION['usuario']['description']);
                 header("Location: ../controller/twitterController.php");
             } else {
                 $_SESSION["error_login"] = "Login incorrecto wachoo";
@@ -45,4 +47,3 @@ function loginUser($pdo) {
 }
 
 ?>
-<!--        -->

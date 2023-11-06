@@ -1,13 +1,13 @@
 <?php 
 
 class User {
-    protected $id;
+    public $id;
     protected $username;
     protected $email;
     protected $password;
     protected $description;
-    protected $listaTweets;
-    protected $listaFollows;
+    public $listaTweets;
+    public $listaFollows; #alguna forma para hacerlo mejor
 
     
     public function __construct($id, $username, $email, $password, $description) {

@@ -17,3 +17,8 @@ function selectPublications($pdo) {
         echo "No se ha podido completar la transaccion";
     }
 }
+
+
+/*lo unico que tengo que hacer es meter estos putos tweets en el puto usuario 
+pero en que momento inicializo el usuario y como lo utilizo en las diferentes pestañas
+*/
