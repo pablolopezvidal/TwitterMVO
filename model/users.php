@@ -5,7 +5,7 @@ class User {
     protected $username;
     protected $email;
     protected $password;
-    protected $description;
+    public $description;
     public $listaTweets;
     public $listaFollows; #alguna forma para hacerlo mejor
 

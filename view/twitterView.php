@@ -118,10 +118,10 @@ a{
   <div id="informacion">
     <div id="informacion_uno">
         <div id="fotoperfil"></div>
-        <h1><?=($_SESSION['usuario']['username']);?></h1>
+        <h1><?=($_SESSION["ObjetoUsuario"]->username);?></h1>
     </div>
     <div id="informacion_dos">
-      <h3><?=($_SESSION['usuario']['description']);?></h3>
+      <h3><?=($_SESSION["ObjetoUsuario"]->description);?></h3>
       <h3>||</h3>
       <h3><?=($_SESSION['usuario']['createDate']);?></h3>
     </div>
@@ -137,17 +137,23 @@ a{
       <?php endforeach;?>
   </div>
   <div id="barra_inferior">
-    <div class="botones"><a href="../twitear/twitear.php">PUBLICAR</a></div>
-    <div class="botones"><a href="../descripcion/cambiardesc.php">DESCRIPCION</a></div>
+    <div class="botones"><a href="../view/nuevoTweetView.php">PUBLICAR</a></div>
+    <div class="botones"><a href="../view/descripcionView.php">DESCRIPCION</a></div>
     <div class="botones"><a href="../controller/publicacionesController.php">MUNDO</a></div>
     <div class="botones"><a href="../controller/seguidosController.php">SEGUIDOS</a></div>
   </div>
 
 
 
-  <h1>usuarios dentro de la variable de session</h1>
+  <h1>usuarios</h1>
   <?php 
-    var_dump($_SESSION['ObjetoUsuario']->listaTweets);
+    var_dump($_SESSION['ObjetoUsuario']);
+    #$usuario.get
+  ?>
+    <h1>ObjetoUsuario///id</h1>
+
+   <?php 
+    var_dump($_SESSION['ObjetoUsuario']->id);
     #$usuario.get
   ?>
   <h1>results</h1>
