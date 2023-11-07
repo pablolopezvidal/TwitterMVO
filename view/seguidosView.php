@@ -134,6 +134,6 @@ a{
 </body>
 </html>
   <?php 
-    var_dump($_SESSION['ObjetoUsuario']->listaFollows[1]);
+    var_dump($_SESSION['ObjetoUsuario']->listaFollows);
     #$usuario.get
   ?>

@@ -8,8 +8,7 @@ $miUserId= $_SESSION["ObjetoUsuario"]->id;
 $results = follow($pdo,$miUserId,$useridtoFOllow);
 
 // Cerrar la conexion
-$pdo = null;
 
-require("C:\Users\pc\desktop\git\TwitterMVO\controller\perfilUsuarioController.php?username=$username");
+header("Location: perfilUsuarioController.php?username=$username");
 
 

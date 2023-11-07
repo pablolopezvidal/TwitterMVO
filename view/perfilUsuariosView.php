@@ -126,13 +126,13 @@ a{
       <h3><?=( $_SESSION["createdateperfilPerfilUsuario"]);?></h3>
     </div>
   </div>
-  <?php
+  <?php 
    $statement = $pdo->prepare("SELECT * from follows where users_id=:idUsuario and userToFollowId=:idUsuarioSegiodo");
    $statement->bindParam(':idUsuario', $_SESSION["ObjetoUsuario"]->id);
    $statement->bindParam(':idUsuarioSegiodo', $_SESSION["idPerfilUsuario"]);
    $statement->execute();
       if($statement->rowCount() == 0):?>
-        <a href="followController.php?userId=<?=$_SESSION["idPerfilUsuario"]?>&username=<?=$_SESSION["nombrePerfilUsuario"]?>">seguir</a> <!--que esto sea un <a> con un metodos post para poder almacenar el nombre de usuario y arrais de ahi imprimir todas las cosas de ese susuario -->                                                                                                                <!--que esto sea un <a> con un metodos post para poder almacenar el nombre de usuario y arrais de ahi imprimir todas las cosas de ese susuario -->
+        <a href="../controller/followController.php?userId=<?=$_SESSION["idPerfilUsuario"]?>& username=<?=$_SESSION["nombrePerfilUsuario"]?>">seguir</a> <!--que esto sea un <a> con un metodos post para poder almacenar el nombre de usuario y arrais de ahi imprimir todas las cosas de ese susuario -->                                                                                                                <!--que esto sea un <a> con un metodos post para poder almacenar el nombre de usuario y arrais de ahi imprimir todas las cosas de ese susuario -->
         <?php else:?>
           <a href="unfollow.php?userId=<?=$_SESSION["idPerfilUsuario"]?>&username=<?=$_SESSION["nombrePerfilUsuario"]?>">unfollow</a> <!--que esto sea un <a> con un metodos post para poder almacenar el nombre de usuario y arrais de ahi imprimir todas las cosas de ese susuario -->                                                                                                                <!--que esto sea un <a> con un metodos post para poder almacenar el nombre de usuario y arrais de ahi imprimir todas las cosas de ese susuario -->
     <?php endif ?> 
