@@ -20,7 +20,6 @@ foreach ($statement2->fetchAll() as $p) {
 return $results;
 
 }catch (PDOException $e) {
-#var_dump($e);
 echo "No se ha podido completar la transaccion";
 }
 }

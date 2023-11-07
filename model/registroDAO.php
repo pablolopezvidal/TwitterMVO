@@ -4,7 +4,6 @@ require("../model/users.php");
 session_start();
 
 function registroUser($pdo) {
-    // Verificar si las variables POST están establecidas y asignar sus valores
     $username = isset($_POST["username"]) ? $_POST["username"] : "";
     $email = isset($_POST["email"]) ? $_POST["email"] : "";
     $password = isset($_POST["password"]) ? $_POST["password"] : "";
@@ -12,7 +11,6 @@ function registroUser($pdo) {
 
     $arrayErrores = array();
 
-    // Validar el nombre de usuario
     if (!empty($username)) {
         $usernameValidado = true;
     } else {
@@ -20,7 +18,6 @@ function registroUser($pdo) {
         $arrayErrores["username"] = "El nombre de usuario no puede ser vacío";
     }
 
-    // Validar el correo electrónico
     if (!empty($email)) {
         $mailValidado = true;
     } else {
@@ -28,7 +25,6 @@ function registroUser($pdo) {
         $arrayErrores["email"] = "El correo electrónico no puede ser vacío";
     }
 
-    // Validar la contraseña
     if (!empty($password)) {
         $passValidado = true;
     } else {
@@ -36,7 +32,6 @@ function registroUser($pdo) {
         $arrayErrores["password"] = "La contraseña no puede ser vacía";
     }
 
-    // Validar la descripción
     if (!empty($description)) {
         $descriptionValidado = true;
     } else {
@@ -44,7 +39,6 @@ function registroUser($pdo) {
         $arrayErrores["description"] = "La descripción no puede ser vacía";
     }
 
-    // Verificar si el nombre de usuario ya existe
     $statement2 = $pdo->prepare("SELECT COUNT(*) FROM users WHERE username = :username");
     $statement2->bindParam(':username', $username);
     $statement2->execute();

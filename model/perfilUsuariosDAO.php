@@ -16,10 +16,9 @@ function selectPerfilUsuario($pdo, $nombreusuario) {
         foreach ($statement->fetchAll() as $p) {
             $objectP = new tweet($p["id"], $p["userId"], $p["text"],$p["createDate"],$p["username"]); 
             array_push($results, $objectP);
-            $_SESSION["descripcionPerfilUsuario"] = $p["description"];#hay alguna forma de hacer esto mejor pq esta feo tener eso ahi, funciona por que cada vez que se itera es la misma descripcion pero lo estoy modificando todo el rato sabes
-            $_SESSION["createdateperfilPerfilUsuario"] = $p["creacionPerfil"];#hay alguna forma de hacer esto mejor pq esta feo tener eso ahi, funciona por que cada vez que se itera es la misma descripcion pero lo estoy modificando todo el rato sabes
+            $_SESSION["descripcionPerfilUsuario"] = $p["description"];
+            $_SESSION["createdateperfilPerfilUsuario"] = $p["creacionPerfil"];
             $_SESSION["idPerfilUsuario"] = $p["userId"];
-            #aqui deberia comprobar si esta dentro del array de tweets de la clase twitter y si no esta pues se mete el tweet
         }
         $_SESSION["nombrePerfilUsuario"] = $nombreusuario;
 

@@ -152,50 +152,6 @@ a{
     <div class="botones"><a href="../controller/publicacionesController.php">MUNDO</a></div>
     <div class="botones"><a href="../controller/seguidosController.php">SEGUIDOS</a></div>
   </div>
-
-
-
-  <h1>usuarios</h1>
-  <?php 
-    var_dump($_SESSION['ObjetoUsuario']);
-    #$usuario.get
-  ?>
-    <h1>ObjetoUsuario///id</h1>
-
-   <?php 
-    var_dump($_SESSION['ObjetoUsuario']->id);
-    #$usuario.get
-  ?>
-  <h1>results</h1>
-  <?php 
-    var_dump($results);
-    #$usuario.get
-  ?>
-  <h1>usuarios</h1>
-  <?php 
-    var_dump($_SESSION['usuario']);
-    #$usuario.get
-  ?>
-  <h1>id</h1>
-  <?php 
-    var_dump($_SESSION['usuario']['id']);
-  ?>
-  <h1>username</h1>
-  <?php 
-    var_dump($_SESSION['usuario']['username']);
-  ?>
-  <h1>email</h1>
-  <?php 
-    var_dump($_SESSION['usuario']['email']);
-  ?>
-  <h1>password</h1>
-  <?php 
-    var_dump($_SESSION['usuario']['password']);
-  ?>
-  <h1>pass</h1>
-  <?php 
-    var_dump($_SESSION['usuario']['password']);
-  ?>      
 </body>
 </html>
 

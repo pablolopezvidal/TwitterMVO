@@ -10,14 +10,13 @@
     <h1>INICIO SESION</h1>
     <?php
     session_start();
-    #require("../model/loginDAO.php");
     if (isset($_SESSION["error_login"])){
       echo $_SESSION["error_login"];
-      $_SESSION['error_login'] = null; #meter en la vista un cacho de php esta bien??????????
+      $_SESSION['error_login'] = null; 
     }
     if (isset($_SESSION["completado"])){
       echo $_SESSION["completado"];
-      $_SESSION['error_login'] = null; #meter en la vista un cacho de php esta bien??????????
+      $_SESSION['error_login'] = null;
     }
     ?>
     <form action="../controller/loginController.php" method="POST">
@@ -27,6 +26,6 @@
       <input type="password" id="password" name="password" required />
       <input type="submit" value="Send" name="submit"/>
     </form>
-    <a href="../view/registroView.php">¿No estas registrado?, iniar registro</a><!-- preguntar si en MVO estaria bien enlazando tal cual como lo hice en el normal-->
+    <a href="../view/registroView.php">¿No estas registrado?, iniar registro</a>
 </body>
 </html>

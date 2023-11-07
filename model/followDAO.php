@@ -17,10 +17,9 @@ $statement->execute();
 $nuevoUsuario = new User($userId,$_SESSION["nombrePerfilUsuario"],"","",$_SESSION["descripcionPerfilUsuario"]);
 selectPublications($pdo, $nuevoUsuario);
 $usuario = $_SESSION["ObjetoUsuario"];
-$usuario->addAmigo($userId,$nuevoUsuario);#------
+$usuario->addAmigo($userId,$nuevoUsuario);
 
 }catch (PDOException $e) {
-#var_dump($e);
 echo "No se ha podido completar la transaccion";
 }
 }

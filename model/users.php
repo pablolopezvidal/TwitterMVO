@@ -7,7 +7,7 @@ class User {
     protected $password;
     public $description;
     public $listaTweets;
-    public $listaFollows; #alguna forma para hacerlo mejor
+    public $listaFollows; 
 
     
     public function __construct($id, $username, $email, $password, $description) {
@@ -26,7 +26,7 @@ class User {
     }
     
     public function addTweet($tweetId, $tweetData) {
-        $this->listaTweets[$tweetId] = $tweetData; // Usamos $tweetId como clave
+        $this->listaTweets[$tweetId] = $tweetData;
     }
 
     public function getListaTweets() {
@@ -34,7 +34,7 @@ class User {
     }
 
     public function addAmigo($amigoId, $amigoData) {
-        $this->listaFollows[$amigoId] = $amigoData; // Usamos $amigoId como clave
+        $this->listaFollows[$amigoId] = $amigoData; 
     }
 
     public function getListaFollows() {
