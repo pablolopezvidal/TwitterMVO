@@ -119,6 +119,7 @@ a{
         <div class="caja">
             <!--COMO HAGO PARA IMPRIMIR EL NOMBRE DE CADA TWEET? PORQUE AQUI LO QUE SE ESTA IMPRMIENDP SON LOS ATRIBUTOS DEL OBGETO, QUE PASA QUE EL OBGETO NO TIENE COMO TAL EL NOMBRE DEL QEU PUBLICO EL TWEET ENTONCES  ENTONCES COMO ACCEDO AL ESE DATO, HAGO UNA QUERY EN LA VISTA LA HAGO EN EL CONTROLADOR O QUE  -->
             <h3><?= $i->nombreUsuario;?></h3>
+            <a href="../controller/perfilUsuarioController.php?username=<?= $i->nombreUsuario; ?>"><?= $i->nombreUsuario; ?></a> <!--que esto sea un <a> con un metodos post para poder almacenar el nombre de usuario y arrais de ahi imprimir todas las cosas de ese susuario -->
             <h3><?= $i->text;?></h3>
             <h3><?= $i->createDate;?></h3>
         </div>  
