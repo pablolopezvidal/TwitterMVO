@@ -15,6 +15,10 @@
       echo $_SESSION["error_login"];
       $_SESSION['error_login'] = null; #meter en la vista un cacho de php esta bien??????????
     }
+    if (isset($_SESSION["completado"])){
+      echo $_SESSION["completado"];
+      $_SESSION['error_login'] = null; #meter en la vista un cacho de php esta bien??????????
+    }
     ?>
     <form action="../controller/loginController.php" method="POST">
       <label for="username">Username:</label>
@@ -23,6 +27,6 @@
       <input type="password" id="password" name="password" required />
       <input type="submit" value="Send" name="submit"/>
     </form>
-    <a href="">¿No estas registrado?, iniar registro</a><!-- preguntar si en MVO estaria bien enlazando tal cual como lo hice en el normal-->
+    <a href="../view/registroView.php">¿No estas registrado?, iniar registro</a><!-- preguntar si en MVO estaria bien enlazando tal cual como lo hice en el normal-->
 </body>
 </html>
